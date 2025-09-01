@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-01T15:54:51.122132" rpa="false" schemaversion="5">
+<suite id="s1" name="Api Testing Usuarios" source="C:\Users\Ivo\Documents\Compass UOL\APITeste\tests\api_testing_usuarios.robot">
+<test id="s1-t1" name="Cenário 01: Cadastrar um novo usuario com sucesso" line="9">
+<kw name="Criar novo usuario" owner="api_testing_usuarios">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-01T15:54:51.299948" level="INFO">${Nome_Aleatoria} = dsOQpl</msg>
+<var>${Nome_Aleatoria}</var>
+<arg>length=6</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-01T15:54:51.299550" elapsed="0.000464"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-01T15:54:51.300394" level="INFO">${Nome_Aleatoria} = dsOQpl</msg>
+<arg>${Nome_Aleatoria}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-01T15:54:51.300182" elapsed="0.000263"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-01T15:54:51.300812" level="INFO">${Senha_Aleatoria} = 5743329668</msg>
+<var>${Senha_Aleatoria}</var>
+<arg>length=10</arg>
+<arg>chars=[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-01T15:54:51.300554" elapsed="0.000285"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-01T15:54:51.301113" level="INFO">${Senha_Aleatoria} = 5743329668</msg>
+<arg>${Senha_Aleatoria}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-01T15:54:51.300951" elapsed="0.000202"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-01T15:54:51.301383" level="INFO">5743329668</msg>
+<arg>${Senha_Aleatoria}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-01T15:54:51.301265" elapsed="0.000160"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-01T15:54:51.301612" level="INFO">dsOQpl</msg>
+<arg>${Nome_Aleatoria}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-01T15:54:51.301509" elapsed="0.000140"/>
+</kw>
+<status status="PASS" start="2025-09-01T15:54:51.298829" elapsed="0.002879"/>
+</kw>
+<kw name="Cadastrar o usuario criado" owner="api_testing_usuarios">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-09-01T15:54:51.302817" level="INFO">${body} = {'username': 'dsOQpl', 'password': '5743329668'}</msg>
+<var>${body}</var>
+<arg>username=${Nome_Aleatoria}</arg>
+<arg>password=${Senha_Aleatoria}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-09-01T15:54:51.302459" elapsed="0.000388"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-01T15:54:51.303070" level="INFO">{'username': 'dsOQpl', 'password': '5743329668'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-01T15:54:51.302954" elapsed="0.000157"/>
+</kw>
+<kw name="Criar Sessão restful-booker" owner="api_testing_usuarios">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-09-01T15:54:51.303589" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-09-01T15:54:51.303446" elapsed="0.000167"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-09-01T15:54:51.303895" level="INFO">Creating Session using : alias=RestfulBooker, url=https://restful-booker.herokuapp.com, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>RestfulBooker</arg>
+<arg>url=https://restful-booker.herokuapp.com</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-09-01T15:54:51.303719" elapsed="0.000393"/>
+</kw>
+<status status="PASS" start="2025-09-01T15:54:51.303233" elapsed="0.000956"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-09-01T15:54:52.603994" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '48'} 
+ body=b'{"username": "dsOQpl", "password": "5743329668"}' 
+ </msg>
+<msg time="2025-09-01T15:54:52.604353" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Content-Length': '28', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Mon, 01 Sep 2025 18:54:52 GMT', 'Etag': 'W/"1c-J3EiwfZwVQjKTKvpvazUfTni8fI"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=NNeTs3iP9QHgaKSXzBr5WI1V8vIND3AmIXmKHZ2mRkA%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1756752892"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=NNeTs3iP9QHgaKSXzBr5WI1V8vIND3AmIXmKHZ2mRkA%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1756752892"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
+ body={"reason":"Bad credentials"} 
+ </msg>
+<msg time="2025-09-01T15:54:52.604573" level="INFO">C:\Users\Ivo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-09-01T15:54:52.606351" level="INFO">${resposta} = &lt;Response [200]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=RestfulBooker</arg>
+<arg>url=/auth</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-09-01T15:54:51.304283" elapsed="1.302154"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-01T15:54:52.608178" level="INFO">{'reason': 'Bad credentials'}</msg>
+<arg>${resposta.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-01T15:54:52.606879" elapsed="0.001398"/>
+</kw>
+<status status="PASS" start="2025-09-01T15:54:51.302171" elapsed="1.306233"/>
+</kw>
+<status status="PASS" start="2025-09-01T15:54:51.297697" elapsed="1.311239"/>
+</test>
+<status status="PASS" start="2025-09-01T15:54:51.124533" elapsed="1.485741"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Api Testing Usuarios" id="s1" pass="1" fail="0" skip="0">Api Testing Usuarios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
