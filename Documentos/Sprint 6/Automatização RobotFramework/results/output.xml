@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-10T15:50:20.616081" rpa="false" schemaversion="5">
+<suite id="s1" name="Api Testing Usuarios" source="C:\Users\Ivo\Documents\Compass UOL\Automatização RobotFramework\tests\api_testing_usuarios.robot">
+<test id="s1-t1" name="Cenário 01: Cadastrar um novo usuario com sucesso" line="9">
+<kw name="Criar novo usuario" owner="api_testing_usuarios">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-10T15:50:21.574653" level="INFO">${Nome_Aleatoria} = 8345088200</msg>
+<var>${Nome_Aleatoria}</var>
+<arg>length=10</arg>
+<arg>chars=[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-10T15:50:21.574212" elapsed="0.000495"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:21.575122" level="INFO">${Nome_Aleatoria} = 8345088200</msg>
+<arg>${Nome_Aleatoria}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:21.574891" elapsed="0.000292"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-10T15:50:21.575597" level="INFO">${Email_aleatorio} = mbjury</msg>
+<var>${Email_aleatorio}</var>
+<arg>length=6</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-10T15:50:21.575308" elapsed="0.000321"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:21.576483" level="INFO">${Email} = mbjury@email.com</msg>
+<arg>${Email}</arg>
+<arg>${email_aleatorio}@email.com</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:21.575753" elapsed="0.000783"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-10T15:50:21.576945" level="INFO">${Senha_Aleatoria} = 5181599994</msg>
+<var>${Senha_Aleatoria}</var>
+<arg>length=10</arg>
+<arg>chars=[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-10T15:50:21.576687" elapsed="0.000287"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:21.577274" level="INFO">${Senha_Aleatoria} = 5181599994</msg>
+<arg>${Senha_Aleatoria}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:21.577106" elapsed="0.000209"/>
+</kw>
+<status status="PASS" start="2025-09-10T15:50:21.573442" elapsed="0.003943"/>
+</kw>
+<kw name="Cadastrar o usuario criado" owner="api_testing_usuarios">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-09-10T15:50:21.578539" level="INFO">${body} = {'nome': '8345088200', 'email': 'mbjury@email.com', 'password': '5181599994', 'administrador': 'true'}</msg>
+<var>${body}</var>
+<arg>nome=${Nome_Aleatoria}</arg>
+<arg>email=${Email}</arg>
+<arg>password=${Senha_Aleatoria}</arg>
+<arg>administrador=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-09-10T15:50:21.578099" elapsed="0.000475"/>
+</kw>
+<kw name="Criar Sessão serverest" owner="api_testing_usuarios">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-09-10T15:50:21.579207" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-09-10T15:50:21.579025" elapsed="0.000209"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-09-10T15:50:21.579562" level="INFO">Creating Session using : alias=ServeRest, url=https://compassuol.serverest.dev, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=ServeRest</arg>
+<arg>url=https://compassuol.serverest.dev</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-09-10T15:50:21.579349" elapsed="0.000453"/>
+</kw>
+<status status="PASS" start="2025-09-10T15:50:21.578742" elapsed="0.001138"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-09-10T15:50:22.208577" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '102'} 
+ body=b'{"nome": "8345088200", "email": "mbjury@email.com", "password": "5181599994", "administrador": "true"}' 
+ </msg>
+<msg time="2025-09-10T15:50:22.208723" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'ae9591c0a3b0922878646eedaf8e37a3;o=1', 'date': 'Wed, 10 Sep 2025 18:50:22 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "UwzZwjoJMSfvcVtQ"
+} 
+ </msg>
+<msg time="2025-09-10T15:50:22.208814" level="INFO">C:\Users\Ivo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-09-10T15:50:22.209235" level="INFO">${resposta} = &lt;Response [201]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=ServeRest</arg>
+<arg>url=/usuarios</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=${status_code_desejado}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-09-10T15:50:21.579974" elapsed="0.629322"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.209751" level="INFO">{'nome': '8345088200', 'email': 'mbjury@email.com', 'password': '5181599994', 'administrador': 'true'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.209512" elapsed="0.000304"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.211142" level="INFO">${ID_USUARIO} = UwzZwjoJMSfvcVtQ</msg>
+<arg>${ID_USUARIO}</arg>
+<arg>${resposta.json()['_id']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.209947" elapsed="0.001263"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.211916" level="INFO">${RESPOSTA} = {'message': 'Cadastro realizado com sucesso', '_id': 'UwzZwjoJMSfvcVtQ'}</msg>
+<arg>${RESPOSTA}</arg>
+<arg>${resposta.json()}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.211360" elapsed="0.000608"/>
+</kw>
+<arg>${Email}</arg>
+<arg>status_code_desejado=201</arg>
+<status status="PASS" start="2025-09-10T15:50:21.577712" elapsed="0.634331"/>
+</kw>
+<kw name="Conferir se o usuario foi criado corretamente" owner="api_testing_usuarios">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.212874" level="INFO">{'message': 'Cadastro realizado com sucesso', '_id': 'UwzZwjoJMSfvcVtQ'}</msg>
+<arg>${RESPOSTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.212729" elapsed="0.000421"/>
+</kw>
+<kw name="Dictionary Should Contain Item" owner="Collections">
+<arg>${RESPOSTA}</arg>
+<arg>message</arg>
+<arg>Cadastro realizado com sucesso</arg>
+<doc>An item of ``key`` / ``value`` must be found in a ``dictionary``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.213287" elapsed="0.000212"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${RESPOSTA}</arg>
+<arg>_id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.213611" elapsed="0.000142"/>
+</kw>
+<status status="PASS" start="2025-09-10T15:50:22.212386" elapsed="0.001431"/>
+</kw>
+<status status="PASS" start="2025-09-10T15:50:21.572441" elapsed="0.641603"/>
+</test>
+<test id="s1-t2" name="Cenario 02: Cadastrar um usuario ja existente" line="14">
+<kw name="Criar novo usuario" owner="api_testing_usuarios">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-10T15:50:22.216559" level="INFO">${Nome_Aleatoria} = 7692028975</msg>
+<var>${Nome_Aleatoria}</var>
+<arg>length=10</arg>
+<arg>chars=[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.215648" elapsed="0.000949"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.216915" level="INFO">${Nome_Aleatoria} = 7692028975</msg>
+<arg>${Nome_Aleatoria}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.216742" elapsed="0.000215"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-10T15:50:22.217685" level="INFO">${Email_aleatorio} = YBzEXH</msg>
+<var>${Email_aleatorio}</var>
+<arg>length=6</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.217052" elapsed="0.000668"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.218851" level="INFO">${Email} = YBzEXH@email.com</msg>
+<arg>${Email}</arg>
+<arg>${email_aleatorio}@email.com</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.218203" elapsed="0.000702"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-10T15:50:22.219234" level="INFO">${Senha_Aleatoria} = 5862226737</msg>
+<var>${Senha_Aleatoria}</var>
+<arg>length=10</arg>
+<arg>chars=[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.219012" elapsed="0.000245"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.219497" level="INFO">${Senha_Aleatoria} = 5862226737</msg>
+<arg>${Senha_Aleatoria}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.219358" elapsed="0.000175"/>
+</kw>
+<status status="PASS" start="2025-09-10T15:50:22.215372" elapsed="0.004276"/>
+</kw>
+<kw name="Cadastrar o usuario criado" owner="api_testing_usuarios">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.220573" level="INFO">${body} = {'nome': '7692028975', 'email': 'YBzEXH@email.com', 'password': '5862226737', 'administrador': 'true'}</msg>
+<var>${body}</var>
+<arg>nome=${Nome_Aleatoria}</arg>
+<arg>email=${Email}</arg>
+<arg>password=${Senha_Aleatoria}</arg>
+<arg>administrador=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.220333" elapsed="0.000265"/>
+</kw>
+<kw name="Criar Sessão serverest" owner="api_testing_usuarios">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.221091" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.220967" elapsed="0.000145"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-09-10T15:50:22.221370" level="INFO">Creating Session using : alias=ServeRest, url=https://compassuol.serverest.dev, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=ServeRest</arg>
+<arg>url=https://compassuol.serverest.dev</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-09-10T15:50:22.221195" elapsed="0.000309"/>
+</kw>
+<status status="PASS" start="2025-09-10T15:50:22.220757" elapsed="0.000801"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-09-10T15:50:22.784574" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '102'} 
+ body=b'{"nome": "7692028975", "email": "YBzEXH@email.com", "password": "5862226737", "administrador": "true"}' 
+ </msg>
+<msg time="2025-09-10T15:50:22.784822" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '9bd4c227e52167877e0f3bb90ee9fae6', 'date': 'Wed, 10 Sep 2025 18:50:22 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "n0e0tEv4q1rbY3P0"
+} 
+ </msg>
+<msg time="2025-09-10T15:50:22.785058" level="INFO">C:\Users\Ivo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-09-10T15:50:22.785847" level="FAIL">Url: https://compassuol.serverest.dev/usuarios Expected status: 201 != 400</msg>
+<var>${resposta}</var>
+<arg>alias=ServeRest</arg>
+<arg>url=/usuarios</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=${status_code_desejado}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-09-10T15:50:22.221632" elapsed="0.653350">Url: https://compassuol.serverest.dev/usuarios Expected status: 201 != 400</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-09-10T15:50:22.875164" elapsed="0.000027"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<arg>${ID_USUARIO}</arg>
+<arg>${resposta.json()['_id']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" start="2025-09-10T15:50:22.875280" elapsed="0.000015"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<arg>${resposta.json()}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" start="2025-09-10T15:50:22.875373" elapsed="0.000014"/>
+</kw>
+<arg>${Email}</arg>
+<arg>status_code_desejado=400</arg>
+<status status="FAIL" start="2025-09-10T15:50:22.220022" elapsed="0.655592">Url: https://compassuol.serverest.dev/usuarios Expected status: 201 != 400</status>
+</kw>
+<kw name="Repetir o cadastro do usuario" owner="api_testing_usuarios">
+<status status="NOT RUN" start="2025-09-10T15:50:22.876117" elapsed="0.000684"/>
+</kw>
+<kw name="Verificar se a API não permitiu o cadastro repetido" owner="api_testing_usuarios">
+<status status="NOT RUN" start="2025-09-10T15:50:22.877305" elapsed="0.000035"/>
+</kw>
+<status status="FAIL" start="2025-09-10T15:50:22.214607" elapsed="0.663060">Url: https://compassuol.serverest.dev/usuarios Expected status: 201 != 400</status>
+</test>
+<test id="s1-t3" name="Cenario 03: Buscar um usuario pelo id" line="20">
+<kw name="Criar novo usuario" owner="api_testing_usuarios">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-10T15:50:22.879433" level="INFO">${Nome_Aleatoria} = 2492027814</msg>
+<var>${Nome_Aleatoria}</var>
+<arg>length=10</arg>
+<arg>chars=[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.879219" elapsed="0.000238"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.879669" level="INFO">${Nome_Aleatoria} = 2492027814</msg>
+<arg>${Nome_Aleatoria}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.879546" elapsed="0.000153"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-10T15:50:22.879926" level="INFO">${Email_aleatorio} = USYbal</msg>
+<var>${Email_aleatorio}</var>
+<arg>length=6</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.879769" elapsed="0.000175"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.880481" level="INFO">${Email} = USYbal@email.com</msg>
+<arg>${Email}</arg>
+<arg>${email_aleatorio}@email.com</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.880024" elapsed="0.000492"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-10T15:50:22.880787" level="INFO">${Senha_Aleatoria} = 8264226962</msg>
+<var>${Senha_Aleatoria}</var>
+<arg>length=10</arg>
+<arg>chars=[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.880600" elapsed="0.000206"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.881003" level="INFO">${Senha_Aleatoria} = 8264226962</msg>
+<arg>${Senha_Aleatoria}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.880891" elapsed="0.000139"/>
+</kw>
+<status status="PASS" start="2025-09-10T15:50:22.879026" elapsed="0.002043"/>
+</kw>
+<kw name="Cadastrar o usuario criado" owner="api_testing_usuarios">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.882279" level="INFO">${body} = {'nome': '2492027814', 'email': 'USYbal@email.com', 'password': '8264226962', 'administrador': 'true'}</msg>
+<var>${body}</var>
+<arg>nome=${Nome_Aleatoria}</arg>
+<arg>email=${Email}</arg>
+<arg>password=${Senha_Aleatoria}</arg>
+<arg>administrador=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.881905" elapsed="0.000407"/>
+</kw>
+<kw name="Criar Sessão serverest" owner="api_testing_usuarios">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-09-10T15:50:22.882935" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.882746" elapsed="0.000219"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-09-10T15:50:22.883277" level="INFO">Creating Session using : alias=ServeRest, url=https://compassuol.serverest.dev, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=ServeRest</arg>
+<arg>url=https://compassuol.serverest.dev</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-09-10T15:50:22.883087" elapsed="0.000460"/>
+</kw>
+<status status="PASS" start="2025-09-10T15:50:22.882472" elapsed="0.001170"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-09-10T15:50:23.390524" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '102'} 
+ body=b'{"nome": "2492027814", "email": "USYbal@email.com", "password": "8264226962", "administrador": "true"}' 
+ </msg>
+<msg time="2025-09-10T15:50:23.390988" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'b22d4f1c37770dd726abfd2f6033833d', 'date': 'Wed, 10 Sep 2025 18:50:23 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "dupX8jStP4gWZjFl"
+} 
+ </msg>
+<msg time="2025-09-10T15:50:23.391312" level="INFO">C:\Users\Ivo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-09-10T15:50:23.392979" level="INFO">${resposta} = &lt;Response [201]&gt;</msg>
+<var>${resposta}</var>
+<arg>alias=ServeRest</arg>
+<arg>url=/usuarios</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=${status_code_desejado}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-09-10T15:50:22.883744" elapsed="0.509319"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-10T15:50:23.393879" level="INFO">{'nome': '2492027814', 'email': 'USYbal@email.com', 'password': '8264226962', 'administrador': 'true'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-10T15:50:23.393506" elapsed="0.000466"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:23.397444" level="INFO">${ID_USUARIO} = dupX8jStP4gWZjFl</msg>
+<arg>${ID_USUARIO}</arg>
+<arg>${resposta.json()['_id']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:23.394192" elapsed="0.003363"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-09-10T15:50:23.398567" level="INFO">${RESPOSTA} = {'message': 'Cadastro realizado com sucesso', '_id': 'dupX8jStP4gWZjFl'}</msg>
+<arg>${RESPOSTA}</arg>
+<arg>${resposta.json()}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-09-10T15:50:23.397792" elapsed="0.000943"/>
+</kw>
+<arg>${Email}</arg>
+<arg>status_code_desejado=201</arg>
+<status status="PASS" start="2025-09-10T15:50:22.881504" elapsed="0.517340"/>
+</kw>
+<kw name="Consultar os dados do novo usuario" owner="api_testing_usuarios">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-09-10T15:50:23.636820" level="INFO">GET Request : url=https://compassuol.serverest.dev/usuarios/dupX8jStP4gWZjFl 
+ path_url=/usuarios/dupX8jStP4gWZjFl 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2025-09-10T15:50:23.637059" level="INFO">GET Response : url=https://compassuol.serverest.dev/usuarios/dupX8jStP4gWZjFl 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'dd428ad818924d9126abfd2f60338b93', 'date': 'Wed, 10 Sep 2025 18:50:23 GMT', 'server': 'Google Frontend', 'Content-Length': '151'} 
+ body={
+    "nome": "2492027814",
+    "email": "USYbal@email.com",
+    "password": "8264226962",
+    "administrador": "true",
+    "_id": "dupX8jStP4gWZjFl"
+} 
+ </msg>
+<msg time="2025-09-10T15:50:23.637230" level="INFO">C:\Users\Ivo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-09-10T15:50:23.637997" level="INFO">${resposta_consulta} = &lt;Response [200]&gt;</msg>
+<var>${resposta_consulta}</var>
+<arg>alias=ServeRest</arg>
+<arg>url=/usuarios/${ID_USUARIO}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-09-10T15:50:23.399596" elapsed="0.238485"/>
+</kw>
+<status status="PASS" start="2025-09-10T15:50:23.399205" elapsed="0.239061"/>
+</kw>
+<status status="PASS" start="2025-09-10T15:50:22.878706" elapsed="0.759896"/>
+</test>
+<status status="FAIL" start="2025-09-10T15:50:20.617750" elapsed="3.022533"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Api Testing Usuarios" id="s1" pass="2" fail="1" skip="0">Api Testing Usuarios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
