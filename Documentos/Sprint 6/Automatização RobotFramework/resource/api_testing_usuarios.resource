@@ -7,7 +7,7 @@ Library    Collections
 Criar novo usuario
     ${Email_aleatorio}    Generate Random String    length=6    chars=[LETTERS]
     Set Test Variable    ${Email}     ${email_aleatorio}@email.com
-    Set Test Variable    ${Senha}    1234
+    Set Test Variable    ${Senha}    123456
 Cadastrar o usuario criado
     [Arguments]    ${Email}    ${Senha}    ${status_code_desejado}
     ${body}    Create Dictionary
