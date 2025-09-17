@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.6 on win32)" generated="2025-09-17T17:31:02.069177" rpa="false" schemaversion="5">
+<suite id="s1" name="Online" source="C:\QAx\projects\mark85-robot-express\online.robot">
+<test id="s1-t1" name="webapp deve estar online" line="7">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-09-17T17:31:02.263267" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\QAx\\projects\\mark85-robot-express\\browser\\traces\\temp\\59ec3eb8-4d4d-47d0-a264-1ea2dcd3946a"}</msg>
+<msg time="2025-09-17T17:31:02.290493" level="INFO">Starting Browser process C:\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:50360</msg>
+<msg time="2025-09-17T17:31:04.136373" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\QAx\\projects\\mark85-robot-express\\browser\\traces\\temp\\59ec3eb8-4d4d-47d0-a264-1ea2dcd3946a"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-09-17T17:31:02.261727" elapsed="1.874899"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-09-17T17:31:07.221617" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2025-09-17T17:31:07.221889" level="INFO">See also file:///C:/QAx/projects/mark85-robot-express/playwright-log.txt for additional details.</msg>
+<msg time="2025-09-17T17:31:07.226935" level="FAIL">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+Call log:
+  - navigating to "http://localhost:3000/", waiting until "load"
+</msg>
+<arg>http://localhost:3000</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2025-09-17T17:31:04.137194" elapsed="3.175822">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+Call log:
+  - navigating to "http://localhost:3000/", waiting until "load"
+</status>
+</kw>
+<kw name="Get Title" owner="Browser">
+<arg>equal</arg>
+<arg>Mark85 by QAx</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="NOT RUN" start="2025-09-17T17:31:07.313568" elapsed="0.000203"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-17T17:31:07.314100" elapsed="0.000122"/>
+</kw>
+<msg time="2025-09-17T17:31:07.324976" level="INFO">Switching context to context=204cec2b-97f7-4dbe-a9d0-d8aebdafc0c4 in CURRENT</msg>
+<msg time="2025-09-17T17:31:07.329138" level="INFO">Successfully changed active context: context=204cec2b-97f7-4dbe-a9d0-d8aebdafc0c4</msg>
+<msg time="2025-09-17T17:31:07.337367" level="INFO">Successfully closed Context</msg>
+<status status="FAIL" start="2025-09-17T17:31:02.260443" elapsed="5.054165">Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+Call log:
+  - navigating to "http://localhost:3000/", waiting until "load"
+</status>
+</test>
+<doc>Online</doc>
+<status status="FAIL" start="2025-09-17T17:31:02.070661" elapsed="5.267809"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Online" id="s1" pass="0" fail="1" skip="0">Online</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

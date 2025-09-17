@@ -1,0 +1,54 @@
+{"level":30,"time":"2025-09-17T20:31:02.983Z","pid":20404,"hostname":"IvoSobral","msg":"Listening on 127.0.0.1:50360"}
+(node:20404) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-09-17T20:31:03.469Z","pid":20404,"hostname":"IvoSobral","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-09-17T20:31:04.132Z","pid":20404,"hostname":"IvoSobral","msg":"Adding browser to stack: chromium, version: 140.0.7339.16"}
+{"level":30,"time":"2025-09-17T20:31:04.133Z","pid":20404,"hostname":"IvoSobral","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-09-17T20:31:04.133Z","pid":20404,"hostname":"IvoSobral","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-09-17T20:31:04.141Z","pid":20404,"hostname":"IvoSobral","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-09-17T20:31:04.142Z","pid":20404,"hostname":"IvoSobral","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@9b710ece06255a616673c9ceee88f1e4\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=60570e91-16e2-4a20-870a-14b8a0a04485\"}"}
+{"level":30,"time":"2025-09-17T20:31:04.156Z","pid":20404,"hostname":"IvoSobral","msg":"Setting default timeout for context context=204cec2b-97f7-4dbe-a9d0-d8aebdafc0c4 to 10000"}
+{"level":30,"time":"2025-09-17T20:31:04.156Z","pid":20404,"hostname":"IvoSobral","msg":"Changed active context: context=204cec2b-97f7-4dbe-a9d0-d8aebdafc0c4"}
+{"level":30,"time":"2025-09-17T20:31:04.834Z","pid":20404,"hostname":"IvoSobral","msg":"Video path: undefined"}
+{"level":30,"time":"2025-09-17T20:31:04.834Z","pid":20404,"hostname":"IvoSobral","msg":"Changed active page"}
+{"level":30,"time":"2025-09-17T20:31:07.204Z","pid":20404,"hostname":"IvoSobral","msg":"Error of node method  newPage"}
+================= Original suppressed error =================
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+Call log:
+[2m  - navigating to "http://localhost:3000/", waiting until "load"[22m
+
+    at newPage (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:12572:18)
+    at async PlaywrightServer.newPage (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:13137:28) {
+  name: 'Error'
+}
+=============================================================
+{"level":30,"time":"2025-09-17T20:31:07.218Z","pid":20404,"hostname":"IvoSobral","msg":"Start of node method takeScreenshot"}
+================= Original suppressed error =================
+Error: Tried to take screenshot, but no page was open.
+    at exists (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:10725:11)
+    at takeScreenshot (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:10769:3)
+    at PlaywrightServer.takeScreenshot (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:13137:34)
+    at Object.onReceiveHalfClose (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-09-17T20:31:07.218Z","pid":20404,"hostname":"IvoSobral","msg":"Error of node method  takeScreenshot"}
+{"level":30,"time":"2025-09-17T20:31:07.319Z","pid":20404,"hostname":"IvoSobral","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-17T20:31:07.319Z","pid":20404,"hostname":"IvoSobral","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-17T20:31:07.321Z","pid":20404,"hostname":"IvoSobral","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-17T20:31:07.322Z","pid":20404,"hostname":"IvoSobral","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-17T20:31:07.323Z","pid":20404,"hostname":"IvoSobral","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-17T20:31:07.323Z","pid":20404,"hostname":"IvoSobral","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-17T20:31:07.326Z","pid":20404,"hostname":"IvoSobral","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-17T20:31:07.326Z","pid":20404,"hostname":"IvoSobral","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-17T20:31:07.328Z","pid":20404,"hostname":"IvoSobral","msg":"Changed active context: context=204cec2b-97f7-4dbe-a9d0-d8aebdafc0c4"}
+{"level":30,"time":"2025-09-17T20:31:07.329Z","pid":20404,"hostname":"IvoSobral","msg":"Start of node method closeContext"}
+{"level":30,"time":"2025-09-17T20:31:07.336Z","pid":20404,"hostname":"IvoSobral","msg":"End of node method closeContext"}
+{"level":30,"time":"2025-09-17T20:31:07.341Z","pid":20404,"hostname":"IvoSobral","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-17T20:31:07.341Z","pid":20404,"hostname":"IvoSobral","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-17T20:31:07.381Z","pid":20404,"hostname":"IvoSobral","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-09-17T20:31:07.658Z","pid":20404,"hostname":"IvoSobral","msg":"End of node method closeAllBrowsers"}
